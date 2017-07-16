@@ -30,9 +30,21 @@
     $(window).scroll(function() {
         if ($("#mainNav").offset().top > 100) {
             $("#mainNav").addClass("navbar-shrink");
-        } else {
+        } else if (window.innerWidth > 1000 && document.title != "FAQ") {
             $("#mainNav").removeClass("navbar-shrink");
         }
     });
 
 })(jQuery); // End of use strict
+
+window.onload = function(){
+  if(window.innerWidth < 1000 || document.title == "FAQ"){
+    document.getElementById('mainNav').classList.add('navbar-shrink');
+    document.getElementById('photoCover').style.marginTop = "50px";
+    console.log("test if");
+  }
+  console.log("TESTETEST");
+  console.log(window.innerWidth);
+  console.log(document.title);
+
+}
