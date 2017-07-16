@@ -28,7 +28,7 @@
     .navbar-toggler {
         z-index: 1;
     }
-    
+
     @media (max-width: 576px) {
         nav > .container {
             width: 100%;
@@ -38,9 +38,21 @@
 
 <link rel="shortcut icon" href="img/favicon.ico">
 
+<script>
+window.onload = function(){
+  if(window.innerWidth < 1000){
+    document.getElementById('mainNav').classList.add('navbar-shrink');
+    console.log("test if");
+  }
+  console.log("TESTETEST");
+  console.log(window.innerWidth);
+
+}
+</script>
+
 </head>
 
-<body id="page-top">
+<body id="page-top" >
 
     <!-- Navigation -->
     <nav class="navbar fixed-top navbar-toggleable-md navbar-inverse" id="mainNav">
@@ -144,7 +156,7 @@
                     <p>VUtensils rents both standard kitchen sets and specialty items. All standard sets come with the fundemental cooking and dinning equipment students need. This includes plates, cups, and silverwear, as well as pots and pans and much more. The amount of utensils that is included in the different sets is proportional to the student's living situation. We also rent specialty items and have a make your own set option.<p>
                 </div>
             </div>
-            <div class="row">
+            <div class="row text-center">
                 <div class="col-md-4 col-sm-6 portfolio-item">
                     <div class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
                         <div class="portfolio-hover">
@@ -231,7 +243,7 @@
                 </div>
                 <div class="col-md-6 col-sm-6 portfolio-item">
                     <div class="portfolio-link" data-toggle="modal" href="#portfolioModal7">
-                        <a class="btn btn-xl text-center">Product Details and Specs</a>
+                        <a class="btn btn-xl text-center">Product Details</a>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6 portfolio-item">
@@ -932,7 +944,7 @@
                                 <!-- Project Details Go Here -->
                                 <h2>Product Details and Specs</h2>
                                 <p class="item-intro text-muted">Brief Product Descrption here</p>
-                                
+
                                 <p>Blah</p>
                                 <ul class="list-inline">
                                     <li>More info here</li>
