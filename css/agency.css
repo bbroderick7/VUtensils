@@ -117,7 +117,7 @@ body {
         padding: 12px 0; }
       #mainNav.navbar-shrink .navbar-brand img{
         width: 70px;
-        height: 70px; } 
+        height: 70px; }
       }
 
 
@@ -614,4 +614,12 @@ ul.social-buttons {
 
   .buy-now{
     margin-bottom: 30px;
+  }
+
+  .btn btn-xl{
+    color: black
+  }
+
+  #productDetailsBtn{
+    color:black;
   }

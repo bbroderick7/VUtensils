@@ -38,7 +38,7 @@
 })(jQuery); // End of use strict
 
 window.onload = function(){
-  if(window.innerWidth < 1000 || document.title == "FAQ"){
+  if(window.innerWidth < 1000 || document.title == "FAQ" || document.title == "Details"){
     document.getElementById('mainNav').classList.add('navbar-shrink');
     document.getElementById('photoCover').style.marginTop = "50px";
     console.log("test if");
