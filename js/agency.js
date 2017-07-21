@@ -40,11 +40,36 @@
 window.onload = function(){
   if(window.innerWidth < 1000 || document.title == "FAQ" || document.title == "Details"){
     document.getElementById('mainNav').classList.add('navbar-shrink');
-    document.getElementById('photoCover').style.marginTop = "50px";
+    if(document.title == "FAQ"){
+      document.getElementById('photoCover').style.marginTop = "50px";
+    }
     console.log("test if");
   }
   console.log("TESTETEST");
   console.log(window.innerWidth);
   console.log(document.title);
 
+  if(document.title == "Details"){
+    displayProductPics();
+  }
+
+}
+
+function displayProductPics(){
+    pictureArray = ["bakeSheet.jpg", "bowl.jpg", "canopener.jpg", "collander.jpg", "cup.jpg", "fork.jpg",
+                    "frypan.jpg", "knife.jpg", "mCupLarge.jpg", "mCupSmall.jpg", "mitts.jpg", "mixBowlLarge.jpg",
+                  "mixBowlSmall.jpg", "plate.jpg", "saucepan.jpg", "spatula.jpg", "spoon.jpg", "tong.jpg", "tuner.jpg"];
+    for(var j=0; j<pictureArray.size; j++){
+      var photoDiv = document.createElement("div");
+      photoDiv.classList.add('col-md-4 col-sm-6 portfolio-item');
+
+      var productImage = document.createElement("IMG");
+      productImage.setAttribute("src", "img/productPics/"+pictureArray[j]);
+      productImage.classList.add('img-fluid');
+
+      photoDiv.appendChild(productImage);
+
+      document.getElementById("productBody").appendChild(photoDiv); 
+    }
+    console.log("Product Test");
 }
