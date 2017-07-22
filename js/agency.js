@@ -56,20 +56,41 @@ window.onload = function(){
 }
 
 function displayProductPics(){
-    pictureArray = ["bakeSheet.jpg", "bowl.jpg", "canopener.jpg", "collander.jpg", "cup.jpg", "fork.jpg",
-                    "frypan.jpg", "knife.jpg", "mCupLarge.jpg", "mCupSmall.jpg", "mitts.jpg", "mixBowlLarge.jpg",
-                  "mixBowlSmall.jpg", "plate.jpg", "saucepan.jpg", "spatula.jpg", "spoon.jpg", "tong.jpg", "tuner.jpg"];
+    var myData = JSON.parse(vutensilsProductData);
     for(var j=0; j<pictureArray.size; j++){
       var photoDiv = document.createElement("div");
-      photoDiv.classList.add('col-md-4 col-sm-6 portfolio-item');
+      photoDiv.classList.add('col-md-4');
+      photoDiv.classList.add('col-xs-6');
+      photoDiv.classList.add('portfolio-item');
 
       var productImage = document.createElement("IMG");
-      productImage.setAttribute("src", "img/productPics/"+pictureArray[j]);
+      productImage.setAttribute("src", "img/productPics/"+ myData.myProducts[j].picture);
       productImage.classList.add('img-fluid');
 
       photoDiv.appendChild(productImage);
 
-      document.getElementById("productBody").appendChild(photoDiv); 
+      document.getElementById("productBody").appendChild(photoDiv);
     }
     console.log("Product Test");
 }
+
+var vutensilsProductData = '{"myProducts": [' +
+'{"picture": "bakeSheet.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additional info": "dimshwasher safe" },' +
+'{"picture": "bowl.jpg", "material": "melamine", "dimensions": "dim here", "color": "white", "additional info": "dimshwasher safe" },' +
+'{"picture": "canopener.jpg", "material": "aluminum + plastic", "dimensions": "dim here", "color": "metallic + black", "additional info": "dimshwasher safe" },' +
+'{"picture": "collander.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additional info": "dimshwasher safe" },' +
+'{"picture": "cup.jpg", "material": "plastic", "dimensions": "dim here", "color": "clear", "additional info": "dimshwasher safe" },' +
+'{"picture": "fork.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additional info": "dimshwasher safe" },' +
+'{"picture": "frypan.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additional info": "dimshwasher safe" },' +
+'{"picture": "knife.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additional info": "dimshwasher safe" },' +
+'{"picture": "mCupLarge.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additional info": "dimshwasher safe" },' +
+'{"picture": "mCupSmall.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additional info": "dimshwasher safe" },' +
+'{"picture": "mitts.jpg", "material": "cloth", "dimensions": "dim here", "color": "grey", "additional info": "washer and dryer safe" },' +
+'{"picture": "mixBowlLarge.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additional info": "dimshwasher safe" },' +
+'{"picture": "mixBowlSmall.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additional info": "dimshwasher safe" },' +
+'{"picture": "plate.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additional info": "dimshwasher safe" },' +
+'{"picture": "saucepan.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additional info": "dimshwasher safe" },' +
+'{"picture": "spatula.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additional info": "dimshwasher safe" },' +
+'{"picture": "spoon.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additional info": "dimshwasher safe" },' +
+'{"picture": "tong.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additional info": "dimshwasher safe" },' +
+'{"picture": "tuner.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additional info": "dimshwasher safe" }']}'
