@@ -57,40 +57,71 @@ window.onload = function(){
 
 function displayProductPics(){
     var myData = JSON.parse(vutensilsProductData);
-    for(var j=0; j<pictureArray.size; j++){
+    for(var j=0; j<myData.myProducts.length; j++){
       var photoDiv = document.createElement("div");
       photoDiv.classList.add('col-md-4');
-      photoDiv.classList.add('col-xs-6');
+      photoDiv.classList.add('col-xs-4');
+      //photoDiv.classList.add('col-lg-offset-2');
       photoDiv.classList.add('portfolio-item');
-
       var productImage = document.createElement("IMG");
       productImage.setAttribute("src", "img/productPics/"+ myData.myProducts[j].picture);
       productImage.classList.add('img-fluid');
-
       photoDiv.appendChild(productImage);
-
       document.getElementById("productBody").appendChild(photoDiv);
+
+
+      var descriptionDiv = document.createElement("div");
+      descriptionDiv.classList.add('col-md-6');
+      descriptionDiv.classList.add('col-xs-6');
+      descriptionDiv.classList.add('portfolio-item');
+
+      var productTitle = document.createElement("h5")
+      var pText = document.createTextNode(myData.myProducts[j].productName);
+      productTitle.appendChild(pText);
+
+      var productDescription1 = document.createElement("P");
+      var pText = document.createTextNode(myData.myProducts[j].material);
+      productDescription1.appendChild(pText);
+      var productDescription2 = document.createElement("P");
+      var pText = document.createTextNode(myData.myProducts[j].dimensions);
+      productDescription2.appendChild(pText);
+      var productDescription3 = document.createElement("P");
+      var pText = document.createTextNode(myData.myProducts[j].color);
+      productDescription3.appendChild(pText);
+      var productDescription4 = document.createElement("P");
+      var pText = document.createTextNode(myData.myProducts[j].additionalInfo);
+      productDescription4.appendChild(pText);
+      productDescription1.classList.add('img-fluid');
+      productDescription2.classList.add('img-fluid');
+      productDescription3.classList.add('img-fluid');
+      productDescription4.classList.add('img-fluid');
+      descriptionDiv.appendChild(productTitle);
+      descriptionDiv.appendChild(productDescription1);
+      descriptionDiv.appendChild(productDescription2);
+      descriptionDiv.appendChild(productDescription3);
+      descriptionDiv.appendChild(productDescription4);
+      document.getElementById("productBody").appendChild(descriptionDiv);
     }
     console.log("Product Test");
 }
 
 var vutensilsProductData = '{"myProducts": [' +
-'{"picture": "bakeSheet.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additional info": "dimshwasher safe" },' +
-'{"picture": "bowl.jpg", "material": "melamine", "dimensions": "dim here", "color": "white", "additional info": "dimshwasher safe" },' +
-'{"picture": "canopener.jpg", "material": "aluminum + plastic", "dimensions": "dim here", "color": "metallic + black", "additional info": "dimshwasher safe" },' +
-'{"picture": "collander.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additional info": "dimshwasher safe" },' +
-'{"picture": "cup.jpg", "material": "plastic", "dimensions": "dim here", "color": "clear", "additional info": "dimshwasher safe" },' +
-'{"picture": "fork.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additional info": "dimshwasher safe" },' +
-'{"picture": "frypan.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additional info": "dimshwasher safe" },' +
-'{"picture": "knife.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additional info": "dimshwasher safe" },' +
-'{"picture": "mCupLarge.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additional info": "dimshwasher safe" },' +
-'{"picture": "mCupSmall.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additional info": "dimshwasher safe" },' +
-'{"picture": "mitts.jpg", "material": "cloth", "dimensions": "dim here", "color": "grey", "additional info": "washer and dryer safe" },' +
-'{"picture": "mixBowlLarge.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additional info": "dimshwasher safe" },' +
-'{"picture": "mixBowlSmall.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additional info": "dimshwasher safe" },' +
-'{"picture": "plate.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additional info": "dimshwasher safe" },' +
-'{"picture": "saucepan.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additional info": "dimshwasher safe" },' +
-'{"picture": "spatula.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additional info": "dimshwasher safe" },' +
-'{"picture": "spoon.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additional info": "dimshwasher safe" },' +
-'{"picture": "tong.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additional info": "dimshwasher safe" },' +
-'{"picture": "tuner.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additional info": "dimshwasher safe" }']}'
+'{"productName": "Baking Sheet", "picture": "bakeSheet.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additionalInfo": "dimshwasher safe" },' +
+'{"productName": "Bowl", "picture": "bowl.jpg", "material": "melamine", "dimensions": "dim here", "color": "white", "additionalInfo": "dimshwasher safe" },' +
+'{"productName": "Can Opener", "picture": "canopener.jpg", "material": "aluminum + plastic", "dimensions": "dim here", "color": "metallic + black", "additionalInfo": "dimshwasher safe" },' +
+'{"productName": "Collander", "picture": "collander.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additionalInfo": "dimshwasher safe" },' +
+'{"productName": "Glass", "picture": "cup.jpg", "material": "plastic", "dimensions": "dim here", "color": "clear", "additionalInfo": "dimshwasher safe" },' +
+'{"productName": "Fork", "picture": "fork.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additionalInfo": "dimshwasher safe" },' +
+'{"productName": "Frying Pan", "picture": "frypan.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additionalInfo": "dimshwasher safe" },' +
+'{"productName": "Knife", "picture": "knife.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additionalInfo": "dimshwasher safe" },' +
+'{"productName": "Measuring Cups", "picture": "mCupLarge.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additionalInfo": "dimshwasher safe" },' +
+'{"productName": "Measuring Spoons", "picture": "mCupSmall.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additionalInfo": "dimshwasher safe" },' +
+'{"productName": "Oven Mitts", "picture": "mitts.jpg", "material": "cloth", "dimensions": "dim here", "color": "grey", "additionalInfo": "washer and dryer safe" },' +
+'{"productName": "Large Mixing Bowl", "picture": "mixBowlLarge.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additionalInfo": "dimshwasher safe" },' +
+'{"productName": "Small Mixing Bowl", "picture": "mixBowlSmall.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additionalInfo": "dimshwasher safe" },' +
+'{"productName": "Plate", "picture": "plate.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additionalInfo": "dimshwasher safe" },' +
+'{"productName": "Sauce Pan", "picture": "saucepan.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additionalInfo": "dimshwasher safe" },' +
+'{"productName": "Spatula", "picture": "spatula.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additionalInfo": "dimshwasher safe" },' +
+'{"productName": "Spoon", "picture": "spoon.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additionalInfo": "dimshwasher safe" },' +
+'{"productName": "Tongs", "picture": "tong.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additionalInfo": "dimshwasher safe" },' +
+'{"productName": "Turner", "picture": "tuner.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additionalInfo": "dimshwasher safe" }]}'
