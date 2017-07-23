@@ -124,4 +124,5 @@ var vutensilsProductData = '{"myProducts": [' +
 '{"productName": "Spatula", "picture": "spatula.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additionalInfo": "dimshwasher safe" },' +
 '{"productName": "Spoon", "picture": "spoon.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additionalInfo": "dimshwasher safe" },' +
 '{"productName": "Tongs", "picture": "tong.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additionalInfo": "dimshwasher safe" },' +
+'{"productName": "Cutting Sheet", "picture": "cuttingBoard.jpg", "material": "Plastic", "dimensions": "Length: 18 in., Width: 24 in., Height: 1/8 in.", "color": "white", "additionalInfo": "dishwasher safe" },' +
 '{"productName": "Turner", "picture": "tuner.jpg", "material": "aluminum", "dimensions": "dim here", "color": "metallic", "additionalInfo": "dimshwasher safe" }]}'
